@@ -124,6 +124,7 @@ if (selectedShape == "triangles") {
   image(img, 0, 0);
   noTint();
 
+  
   canvasWebgl.clear();
   canvasWebgl.push();
   canvasWebgl.rotateY(loop * TWO_PI);
