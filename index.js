@@ -11,7 +11,7 @@ function setup() {
   let selectionDiv = createDiv();
   selectionDiv.id('selectionDiv');
 
-  createElement('h2', 'Color Selection').parent(colorSelectionDiv);
+  createElement('h2', 'Personal animation').parent(colorSelectionDiv);
 
   // First color selection dropdown
   let color1Select = createSelect();
@@ -76,13 +76,14 @@ function handleFile(file) {
       // Load the selected image and convert it to Base64
       loadImage(file.data, (img) => {
         uploadedImage = img; // Store the image object
-        let uploadedImage = uploadedImage.canvas.toDataURL();
-        localStorage.setItem('uploadedImage', uploadedImage);
+        let imgBase64 = uploadedImage.canvas.toDataURL();
+        localStorage.setItem('uploadedImage', imgBase64);
       });
     } else {
       alert('Please upload an image file (e.g., JPG, PNG).');
     }
   }
+  
 
 function nextPage() {
   selectedColor1 = select('#color1').value();
