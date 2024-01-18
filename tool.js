@@ -138,8 +138,6 @@ if (selectedShape == "triangles") {
   
 }
 
-function keyPressed() {
-	if (key === 's') {
-	  saveGif('mySketch', 5);
-	}
+function mousePressed() {
+	  saveGif('graphicAnimation', 5);
   }
