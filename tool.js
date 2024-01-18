@@ -15,10 +15,11 @@ let growthSpeed = 5;
 easeInOut = t => t > 0.5 ? 4 * pow((t - 1), 3) + 1 : 4 * pow(t, 3);
 
 function preload() {
-  const uploadedImage = localStorage.getItem('uploadedImage');
-  if (uploadedImage) {
-    img = loadImage(uploadedImage);
-  } else {
+    const imgBase64 = localStorage.getItem('uploadedImage');
+  if (imgBase64) {
+    // Create an image from the Base64 string
+    img = loadImage(imgBase64);
+  }  else {
     img = loadImage("example2.png");
   }
 }
