@@ -19,7 +19,7 @@ function preload() {
   if (uploadedImage) {
     img = loadImage(uploadedImage);
   } else {
-    img = loadImage("pexels-dazzle-jam-1164674.png");
+    img = loadImage("example2.png");
   }
 }
 
@@ -37,6 +37,8 @@ function setup() {
 }
 
 function draw() {
+	let c = frameCount % 255;
+	fill(c);
   background(color(selectedColor1));
 
   var zoom = min(windowWidth / img.width, windowHeight / img.height);
@@ -135,3 +137,9 @@ if (selectedShape == "triangles") {
   image(canvasWebgl, -150, 0);
   
 }
+
+function keyPressed() {
+	if (key === 's') {
+	  saveGif('mySketch', 5);
+	}
+  }
