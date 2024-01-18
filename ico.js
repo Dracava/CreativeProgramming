@@ -62,7 +62,7 @@ function subdivide(v1, v2, v3, depth)
 	subdivide(v12, v23, v31, depth-1);
 }
 
-function function mousePressed(){
+function mousePressed(){
 	triangles = [];
 	subdivisions = (subdivisions+1)%4;
 	createIcosaedrum();
