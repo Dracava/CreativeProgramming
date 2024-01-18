@@ -12,17 +12,22 @@ function preload() {
 }
 
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+	createCanvas(windowWidth, windowHeight);	
 	
 	canvasWebgl = createGraphics(img.width + 300, img.height, WEBGL);
 	canvasWebgl.stroke(255);
 	canvasWebgl.strokeWeight(3);
 	canvasWebgl.fill(0, 100);
 	createIcosaedrum();
+
+	  // Retrieve selected colors from localStorage
+  selectedColor1 = localStorage.getItem('selectedColor1');
+  selectedColor2 = localStorage.getItem('selectedColor2');
+
 }
 
 function draw() {
-	background(230, 230, 125);
+	background(color(selectedColor1));
 	
 	//centralize
 	var zoom = min(windowWidth/img.width, windowHeight/img.height);
@@ -38,7 +43,7 @@ function draw() {
 	let curSize = min(size, dist);
 	
 	noStroke();
-	fill(125, 255, 255);
+	 fill(color(selectedColor2));
 	push();
 		translate(img.width/2, img.height/2 - 100);
 		rotate(PI * progress / 3);
@@ -80,8 +85,7 @@ function draw() {
 			circle(x, y, s);
 		}
 	}
-	
-	
+
 	canvasWebgl.clear();
 	canvasWebgl.push();
 	canvasWebgl.rotateY(loop * TWO_PI);
