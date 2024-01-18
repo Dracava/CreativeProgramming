@@ -1,17 +1,3 @@
-/******************
-Code by Vamoss
-Original code link:
-https://www.openprocessing.org/sketch/672835
-
-Author links:
-http://vamoss.com.br
-http://twitter.com/vamoss
-http://github.com/vamoss
-******************/
-
-//Photography by Dazzle Jam
-//https://www.pexels.com/photo/grayscale-photo-of-topless-woman-1164674/
-
 var img;
 
 var canvasWebgl;
