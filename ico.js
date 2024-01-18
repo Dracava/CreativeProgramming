@@ -1,7 +1,6 @@
 const radius = 450;
 var subdivisions = 1;//starting from 0
 
-//https://www.glprogramming.com/red/chapter02.html
 var triangles = [];
 function createIcosaedrum(){
 	var X = .525731112119133606*radius;
@@ -64,7 +63,9 @@ function subdivide(v1, v2, v3, depth)
 }
 
 function keyPressed(){
+	if(key == c){
 	triangles = [];
 	subdivisions = (subdivisions+1)%4;
 	createIcosaedrum();
+	}
 }
