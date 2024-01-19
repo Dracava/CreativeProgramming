@@ -7,10 +7,6 @@ function setup() {
   let colorSelectionDiv = createDiv();
   colorSelectionDiv.id('colorSelection');
 
-  //shape selection form
-  let selectionDiv = createDiv();
-  selectionDiv.id('selectionDiv');
-
   createElement('h2', 'Personal animation').parent(colorSelectionDiv);
 
   // First color selection dropdown
@@ -30,7 +26,7 @@ function setup() {
   color1Select.option('pink');
   color1Select.option('brown');
   
-  createElement('label', 'Select First Color:').attribute('for', 'color1').parent(colorSelectionDiv);
+  createElement('label', 'Pick a color:').attribute('for', 'color1').parent(colorSelectionDiv);
   color1Select.parent(colorSelectionDiv);
 
   // Second color selection dropdown
@@ -49,7 +45,7 @@ function setup() {
   color2Select.option('orange');
   color2Select.option('pink');
   color2Select.option('brown');  
-  createElement('label', 'Select Second Color:').attribute('for', 'color2').parent(colorSelectionDiv);
+  createElement('label', 'Pick a second color:').attribute('for', 'color2').parent(colorSelectionDiv);
   color2Select.parent(colorSelectionDiv);
 
   // Shape selection dropdown
@@ -58,15 +54,15 @@ function setup() {
   shapeSelect.option('triangles');
   shapeSelect.option('squares');
   shapeSelect.option('circles');
-  createElement('label', 'Select Shape:').attribute('for', 'shape').parent(selectionDiv);
-  shapeSelect.parent(selectionDiv);
+  createElement('label', 'Select a shape:').attribute('for', 'shape').parent(colorSelectionDiv);
+  shapeSelect.parent(colorSelectionDiv);
 
+  createElement('label', 'Upload a picture:').parent(colorSelectionDiv);
   let uploadButton = createFileInput(handleFile);
-  uploadButton.position(40, 110);
+  uploadButton.parent(colorSelectionDiv);
 
   // Next page button
-  let nextPageButton = createButton('Continue');
-  nextPageButton.position(150, 150);
+  let nextPageButton = createButton('Generate animation');
   nextPageButton.mousePressed(nextPage);
   nextPageButton.parent(colorSelectionDiv);
 }
@@ -83,7 +79,6 @@ function handleFile(file) {
       alert('Please upload an image file (e.g., JPG, PNG).');
     }
   }
-  
 
 function nextPage() {
   selectedColor1 = select('#color1').value();
