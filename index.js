@@ -1,5 +1,6 @@
 let selectedColor1, selectedColor2, uploadedImage, selectedShape;
-let introduction = "Generate an animation with your yourself. Select your two favorite colors, then a preferred shape. Lastly, upload an image of yourself without background (png)."
+let introduction = "Generate a colorful animation of yourself. Select your two favorite colors, then a preferred shape. Lastly, upload an image of yourself without background (png)."
+let information = "On the next page: press 's' in order to download a stillframe."
 
 function setup() {
   noCanvas();
@@ -9,8 +10,9 @@ function setup() {
   let colorSelectionDiv = createDiv();
   colorSelectionDiv.id('colorSelection');
 
-  createElement('h2', 'Personal animation').parent(colorSelectionDiv);
+  createElement('h2', 'Bespoke Animator').parent(colorSelectionDiv);
   createP(introduction).parent(colorSelectionDiv); // Add this line to create and display the paragraph
+  createP(information).parent(colorSelectionDiv); // Add this line to create and display the paragraph
 
   // First color selection dropdown
   let color1Select = createSelect();
@@ -29,7 +31,7 @@ function setup() {
   color1Select.option('pink');
   color1Select.option('brown');
   
-  createElement('label', 'Pick a color:').attribute('for', 'color1').parent(colorSelectionDiv);
+  createElement('label', '1. Pick a color:').attribute('for', 'color1').parent(colorSelectionDiv);
   color1Select.parent(colorSelectionDiv);
 
   // Second color selection dropdown
@@ -48,7 +50,7 @@ function setup() {
   color2Select.option('orange');
   color2Select.option('pink');
   color2Select.option('brown');  
-  createElement('label', 'Pick a second color:').attribute('for', 'color2').parent(colorSelectionDiv);
+  createElement('label', '2. Pick a second color:').attribute('for', 'color2').parent(colorSelectionDiv);
   color2Select.parent(colorSelectionDiv);
 
   // Shape selection dropdown
@@ -57,10 +59,10 @@ function setup() {
   shapeSelect.option('triangles');
   shapeSelect.option('squares');
   shapeSelect.option('circles');
-  createElement('label', 'Select a shape:').attribute('for', 'shape').parent(colorSelectionDiv);
+  createElement('label', '3. Select a shape:').attribute('for', 'shape').parent(colorSelectionDiv);
   shapeSelect.parent(colorSelectionDiv);
 
-  createElement('label', 'Upload a picture:').parent(colorSelectionDiv);
+  createElement('label', '4. Upload a picture:').parent(colorSelectionDiv);
   let uploadButton = createFileInput(handleFile);
   uploadButton.parent(colorSelectionDiv);
 
