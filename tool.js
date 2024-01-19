@@ -83,16 +83,16 @@ if (selectedShape == "triangles") {
     }
   } else if (selectedShape == "squares"){
     // center rectangle
-	rotate(PI / 4);
     rectMode(CENTER);
     rect(0, 0, curSize, curSize);
 
     // lateral rectangles
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 8; i++) {
       let distX = sin(i / 3 * TWO_PI + PI) * dist;
       let distY = cos(i / 3 * TWO_PI + PI) * dist;
       rect(distX, distY, curSize, curSize);
     }
+    rect(sin(frameCount *0.01)*800);
   }
   else if (selectedShape == "circles"){
 	  // Move ellipses in from outside the screen
@@ -141,7 +141,7 @@ if (selectedShape == "triangles") {
 }
 
 function keyPressed() {
-	if (key === 's') {
-	  saveGif('graphicAnimation', 5);
-	}
+  if (key === 's') {
+      saveCanvas('myAnimation', 'png');
   }
+}
