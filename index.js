@@ -1,13 +1,16 @@
 let selectedColor1, selectedColor2, uploadedImage, selectedShape;
+let introduction = "Generate an animation with your yourself. Select your two favorite colors, then a preferred shape. Lastly, upload an image of yourself without background (png)."
 
 function setup() {
   noCanvas();
   
+
   // Color selection form
   let colorSelectionDiv = createDiv();
   colorSelectionDiv.id('colorSelection');
 
   createElement('h2', 'Personal animation').parent(colorSelectionDiv);
+  createP(introduction).parent(colorSelectionDiv); // Add this line to create and display the paragraph
 
   // First color selection dropdown
   let color1Select = createSelect();
